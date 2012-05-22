@@ -52,7 +52,19 @@ public class ScreenDetectorActivity extends Activity {
             size = "UNDEFINED";
         }
 
+	String length = null;
+	switch(c.screenLayout & Configuration.SCREENLAYOUT_LONG_MASK) {
+	case Configuration.SCREENLAYOUT_LONG_YES:
+	    length = "LONG";
+	    break;
+	case Configuration.SCREENLAYOUT_LONG_NO:
+	    length = "NOTLONG";
+	    break;
+	default:
+	    length = "UNDEFINED";
+	}
+
         TextView text = (TextView) findViewById(R.id.text);
-        text.setText(density + " / " + size);
+        text.setText(density + " / " + size + " / " + length);
     }
 }
