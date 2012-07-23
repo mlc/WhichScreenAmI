@@ -16,8 +16,14 @@ public class ScreenDetectorActivity extends Activity {
         DisplayMetrics dm = getResources().getDisplayMetrics();
         String density = null;
         switch (dm.densityDpi) {
+        case DisplayMetrics.DENSITY_XXHIGH:
+            density = "XXHDPI";
+            break;
         case DisplayMetrics.DENSITY_XHIGH:
             density = "XHDPI";
+            break;
+        case DisplayMetrics.DENSITY_TV:
+            density = "TVDPI";
             break;
         case DisplayMetrics.DENSITY_HIGH:
             density = "HDPI";
